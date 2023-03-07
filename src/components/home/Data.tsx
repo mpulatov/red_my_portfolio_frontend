@@ -24,7 +24,7 @@ const Data: FC = (props: Props) => {
 
 			<Link to='#' className={`${styles.button} ${styles.button__flex}`}>
 				Contact Me
-				<AiOutlineSend />
+				<AiOutlineSend className={styles.button__icon} />
 			</Link>
 		</div>
 	)
