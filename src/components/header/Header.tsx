@@ -20,7 +20,6 @@ type Props = {}
 
 const Header: FC = (props: Props) => {
 	const [toggle, setToggle] = useState(false)
-	console.log(toggle)
 	return (
 		<header className={styles.header}>
 			<nav className={`${styles.nav} ${styles.container}`}>
