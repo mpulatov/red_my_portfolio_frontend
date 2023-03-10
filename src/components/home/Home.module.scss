@@ -3,6 +3,11 @@
 }
 
 .home {
+	.container {
+		max-width: 968px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	.button {
 		display: inline-block;
 		background-color: var(--text-color);
