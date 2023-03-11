@@ -57,7 +57,7 @@
 			}
 
 			//TODO: Active Link
-			.active__link:hover {
+			.active__link {
 				color: var(--title-color-dark);
 			}
 		}
@@ -144,4 +144,9 @@
 		top: initial;
 		bottom: 0;
 	}
+}
+
+//TODO: Scroll Header
+.scroll__header {
+	box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.2);
 }

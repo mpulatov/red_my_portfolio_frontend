@@ -19,9 +19,25 @@ import styles from './Header.module.scss'
 type Props = {}
 
 const Header: FC = (props: Props) => {
+	// TODO: Change Background Header
+	window.addEventListener('scroll', function () {
+		const header = this.document.querySelector('.header')
+		// TODO: When the scroll is higher than 200 viewport height, add the scroll-header class to a tag with the header tag.
+		if (this.scrollY >= 80) {
+			// @ts-ignore
+			header.classList.add(styles.scroll__header)
+		} else {
+			// @ts-ignore
+			header.classList.remove(styles.scroll__header)
+		}
+	})
+
+	//  TODO: Change Toggle
 	const [toggle, setToggle] = useState(false)
+	const [navActive, setNavActive] = useState('#home')
+
 	return (
-		<header className={styles.header}>
+		<header className={`${styles.header} header`}>
 			<nav className={`${styles.nav} ${styles.container}`}>
 				<Link to='/' className={styles.nav__logo}>
 					MP
@@ -37,8 +53,13 @@ const Header: FC = (props: Props) => {
 					<ul className={`${styles.nav__list} ${styles.grid}`}>
 						<li className={styles.nav__item}>
 							<Link
-								to='#'
-								className={`${styles.nav__link} ${styles.active__link}`}
+								to='#home'
+								onClick={() => setNavActive('#home')}
+								className={
+									navActive === '#home'
+										? `${styles.nav__link} ${styles.active__link}`
+										: `${styles.nav__link}`
+								}
 							>
 								<AiOutlineHome className={styles.nav__icon} /> Home
 							</Link>
@@ -46,16 +67,26 @@ const Header: FC = (props: Props) => {
 
 						<li className={styles.nav__item}>
 							<Link
-								to='#'
-								className={`${styles.nav__link} ${styles.active__link}`}
+								to='#about'
+								onClick={() => setNavActive('#about')}
+								className={
+									navActive === '#about'
+										? `${styles.nav__link} ${styles.active__link}`
+										: `${styles.nav__link}`
+								}
 							>
 								<AiOutlineUser className={styles.nav__icon} /> About
 							</Link>
 						</li>
 						<li className={styles.nav__item}>
 							<Link
-								to='#'
-								className={`${styles.nav__link} ${styles.active__link}`}
+								to='#skills'
+								onClick={() => setNavActive('#skills')}
+								className={
+									navActive === '#skills'
+										? `${styles.nav__link} ${styles.active__link}`
+										: `${styles.nav__link}`
+								}
 							>
 								<GiSkills className={styles.nav__icon} />
 								Skills
@@ -63,8 +94,13 @@ const Header: FC = (props: Props) => {
 						</li>
 						<li className={styles.nav__item}>
 							<Link
-								to='#'
-								className={`${styles.nav__link} ${styles.active__link}`}
+								to='#service'
+								onClick={() => setNavActive('#service')}
+								className={
+									navActive === '#service'
+										? `${styles.nav__link} ${styles.active__link}`
+										: `${styles.nav__link}`
+								}
 							>
 								<MdOutlineHomeRepairService className={styles.nav__icon} />{' '}
 								Service
@@ -72,16 +108,26 @@ const Header: FC = (props: Props) => {
 						</li>
 						<li className={styles.nav__item}>
 							<Link
-								to='#'
-								className={`${styles.nav__link} ${styles.active__link}`}
+								to='#portfolio'
+								onClick={() => setNavActive('#portfolio')}
+								className={
+									navActive === '#portfolio'
+										? `${styles.nav__link} ${styles.active__link}`
+										: `${styles.nav__link}`
+								}
 							>
 								<MdOutlineImage className={styles.nav__icon} /> Portfolio
 							</Link>
 						</li>
 						<li className={styles.nav__item}>
 							<Link
-								to='#'
-								className={`${styles.nav__link} ${styles.active__link}`}
+								to='#contact'
+								onClick={() => setNavActive('#contact')}
+								className={
+									navActive === '#contact'
+										? `${styles.nav__link} ${styles.active__link}`
+										: `${styles.nav__link}`
+								}
 							>
 								<MdOutlineSendToMobile className={styles.nav__icon} /> Contact
 							</Link>

@@ -1,11 +1,11 @@
 .footer {
 	background-color: var(--body-color);
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	.container {
-		max-width: 968px;
-		margin-left: auto;
-		margin-right: auto;
-	}
+	//.container {
+	//	max-width: 968px;
+	//	margin-left: auto;
+	//	margin-right: auto;
+	//}
 	.footer__container {
 		padding: 2rem 0 6rem;
 
@@ -48,6 +48,12 @@
 				&:hover {
 					background-color: var(--title-color-dark);
 				}
+
+				@media screen and (max-width: 992px) {
+					padding: 0.25rem;
+					border-radius: 0.25rem;
+					font-size: 1rem;
+				}
 			}
 		}
 
@@ -57,6 +63,14 @@
 			color: var(--title-color);
 			text-align: center;
 			font-size: var(--smaller-font-size);
+		}
+
+		@media screen and (max-width: 992px) {
+			.footer__social_link {
+				padding: 0.25rem;
+				border-radius: 0.25rem;
+				font-size: 1rem;
+			}
 		}
 	}
 }

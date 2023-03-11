@@ -12,7 +12,7 @@ type Props = {}
 
 const About: FC = (props: Props) => {
 	return (
-		<section className={`${styles.about} ${styles.section}`}>
+		<section className={`${styles.about} ${styles.section}`} id='about'>
 			<h2 className={styles.section__title}>About Me</h2>
 			<span className={styles.section__subtitle}>My introduction</span>
 
